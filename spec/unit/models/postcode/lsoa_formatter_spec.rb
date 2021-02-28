@@ -3,7 +3,7 @@
 require './spec/spec_helper'
 require './app/models/postcode/lsoa_formatter'
 
-describe Postcode::LsoaFormatter do
+describe Postcode::LsoaFormatter do # rubocop:disable Metrics/BlockLength
   let(:lsoa_formatter) do
     described_class.new(postcode_api_response)
   end

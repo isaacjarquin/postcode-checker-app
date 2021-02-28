@@ -4,7 +4,7 @@ require './spec/spec_helper'
 require './app/controllers/postcode_controller'
 require 'net/http'
 
-RSpec.describe Postcode do
+RSpec.describe Postcode do # rubocop:disable Metrics/BlockLength
   subject(:request) { get '/postcode', postcode: postcode }
 
   context 'Given an invalid postcode' do
@@ -19,7 +19,7 @@ RSpec.describe Postcode do
     end
   end
 
-  context 'Given a valid postcode' do
+  context 'Given a valid postcode' do # rubocop:disable Metrics/BlockLength
     context 'Given postcode is inside of the service area' do
       let(:postcode) { 'SE17QD' }
       let(:url) do

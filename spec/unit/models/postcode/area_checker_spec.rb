@@ -3,7 +3,7 @@
 require './spec/spec_helper'
 require './app/models/postcode/area_checker'
 
-describe Postcode::AreaChecker do
+describe Postcode::AreaChecker do # rubocop:disable Metrics/BlockLength
   subject(:allowed?) { described_class.allowed?(postcode) }
 
   let(:api_postcodes) do
