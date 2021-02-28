@@ -31,11 +31,7 @@ RSpec.describe Postcode do
       end
 
       let(:postcode_inside_area_response) do
-        {
-          result: {
-            lsoa: 'Southwark 034A'
-          }
-        }.to_json
+        File.read('./spec/mock/api/responses/postcode_inside_area_response.json')
       end
 
       before do
