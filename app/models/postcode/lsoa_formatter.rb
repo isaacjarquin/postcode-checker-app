@@ -9,10 +9,14 @@ module Postcode
 
     def area
       lsoa_splitted.take(lsoa_splitted.size - 1).join(' ')
+    rescue StandardError
+      'No result'
     end
 
     def code
       lsoa_splitted.last
+    rescue StandardError
+      'No result'
     end
 
     private
