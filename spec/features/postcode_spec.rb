@@ -1,10 +1,18 @@
 # frozen_string_literal: true
 
 require './spec/spec_helper'
+require './app/controllers/postcode_controller'
 
 RSpec.describe 'Postcode' do
-  context 'Given a invalid postcode' do
-    skip 'returns an invalid password error' do
+  subject(:request) { get '/postcode', postcode: 'Invalid Postcode' }
+
+  context 'Given an invalid postcode' do
+    let(:expected_response) do
+      '{"code":400,"error":"Invalid Postcode"}'
+    end
+
+    it 'returns an invalid password error' do
+      expect(request.body).to eql(expected_response)
     end
   end
 
