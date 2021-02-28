@@ -1,0 +1,42 @@
+{
+  "status": 200,
+  "result": {
+    "postcode": "SW20 0JN",
+    "quality": 1,
+    "eastings": 523124,
+    "northings": 169005,
+    "country": "England",
+    "nhs_ha": "London",
+    "longitude": -0.231195,
+    "latitude": 51.406715,
+    "european_electoral_region": "London",
+    "primary_care_trust": "Sutton and Merton",
+    "region": "London",
+    "lsoa": "Merton 016E",
+    "msoa": "Merton 016",
+    "incode": "0JN",
+    "outcode": "SW20",
+    "parliamentary_constituency": "Wimbledon",
+    "admin_district": "Merton",
+    "parish": "Merton, unparished area",
+    "admin_county": null,
+    "admin_ward": "West Barnes",
+    "ced": null,
+    "ccg": "NHS South West London",
+    "nuts": "Merton, Kingston upon Thames and Sutton",
+    "codes": {
+      "admin_district": "E09000024",
+      "admin_county": "E99999999",
+      "admin_ward": "E05000473",
+      "parish": "E43000214",
+      "parliamentary_constituency": "E14001040",
+      "ccg": "E38000245",
+      "ccg_id": "36L",
+      "ced": "E99999999",
+      "nuts": "UKI63",
+      "lsoa": "E01003471",
+      "msoa": "E02000704",
+      "lau2": "E05000473"
+    }
+  }
+}

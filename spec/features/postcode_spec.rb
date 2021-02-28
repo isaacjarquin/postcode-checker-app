@@ -46,7 +46,28 @@ RSpec.describe Postcode do
     end
 
     context 'Given postcode is outside of the service area' do
-      skip 'does not allow the postcode' do
+      let(:postcode) { 'SW200JN' }
+
+      let(:url) do
+        "http://postcodes.io/postcodes/#{postcode}"
+      end
+
+      let(:expected_response) do
+        '{"code":200,"allowed":false}'
+      end
+
+      let(:postcode_outside_area_response) do
+        File.read('./spec/mock/api/responses/postcode_outside_area_response.json')
+      end
+
+      before do
+        allow(Net::HTTP).to receive(:get)
+          .with(URI(url))
+          .and_return(postcode_outside_area_response)
+      end
+
+      it 'does not allow the postcode' do
+        expect(request.body).to eql(expected_response)
       end
     end
   end
