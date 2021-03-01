@@ -4,7 +4,7 @@ The application is a small form that collects the user input and sends it to /po
 # How to run the application
 In order to run the application you need to clone the repo locally and execute the following steps
 
-  - bundle
+  - bundle install
 
   - bundle exec postcode_checker.rb
 
