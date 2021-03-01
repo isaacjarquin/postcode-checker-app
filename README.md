@@ -1,5 +1,15 @@
 # Design considerations
-The application is a small form that collects the user input and sends it to /postcode endpoint using a get request. Before we check if the postcode is allowed or not, we validate that the user input is a valid uk postcode (uk_postcode gem). If the input is not valid an error will be raised and Invalid Input sent back to the client. If the input is valid we will proceed to check if the postcode is allowed or not. The logic involved checking whether a user is allowed or not consisting of a simple API in charge of fetching the postcode info from postcodes.io, and two classes (AreaChecker and LsoaFormatter) to handle the response. LsoaFormatter will split the lsoa field coming from postcodes.io into area and code. AreaCehcker will use the area from LsoaFormatter to check if it is on the allowed list.
+The application is a small sinatra app that consist of a form that collects the user input and sends it to /postcode endpoint using a get request. Before we check if the postcode is allowed or not, we validate that the user input has a valid uk postcode format (uk_postcode gem). If the input is not valid an error will be raised and Invalid Input sent back to the client. If the input is valid we will proceed to check if the postcode is allowed or not. The logic involved checking whether a user is allowed or not consisting of a simple API in charge of fetching the postcode info from postcodes.io, and two classes (AreaChecker and LsoaFormatter) to handle the response. LsoaFormatter will split the lsoa field coming from postcodes.io into area and code. AreaCehcker will use the area f
+
+# Tools
+We have use an small set of tools for development:
+
+- Rucocop: to check code standars and linting.
+
+- Rspec: for testing purposes
+
+- pry: for debugging purposes
+
 
 # How to run the application
 In order to run the application you need to clone the repo locally and execute the following steps
