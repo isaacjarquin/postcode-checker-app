@@ -6,15 +6,17 @@ require './app/models/postcode/area_checker'
 class InvalidPostcode < StandardError; end
 
 get '/postcode' do
-  postcode = UKPostcode.parse(params[:postcode].to_s)
-  raise InvalidPostcode unless postcode.valid?
+  begin
+    postcode = UKPostcode.parse(params[:postcode].to_s)
 
-  {
-    code: 200,
-    allowed: Postcode::AreaChecker.allowed?(postcode.to_s.delete(' '))
-  }.to_json
-end
+    raise InvalidPostcode unless postcode.valid?
 
-error InvalidPostcode do
-  { code: 400, error: 'Invalid Postcode' }.to_json
+    if Postcode::AreaChecker.allowed?(postcode.to_s.delete(' '))
+      "Postcode #{postcode} is allowed"
+    else
+      "Postcode #{postcode} is not allowed"
+    end
+  rescue InvalidPostcode
+    'Invalid Postcode'
+  end
 end

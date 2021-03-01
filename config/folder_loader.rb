@@ -14,7 +14,10 @@ module Config
     private
 
     def app_folders
-      ['./app/controllers/**/*.rb']
+      [
+        './app/controllers/**/*.rb',
+        './app/models/**/*.rb'
+      ]
     end
   end
 end

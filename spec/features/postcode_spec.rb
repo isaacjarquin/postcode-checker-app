@@ -11,7 +11,7 @@ RSpec.describe Postcode do # rubocop:disable Metrics/BlockLength
     let(:postcode) { 'Invalid Postcode' }
 
     let(:expected_response) do
-      '{"code":400,"error":"Invalid Postcode"}'
+      'Invalid Postcode'
     end
 
     it 'returns an invalid password error' do
@@ -27,7 +27,7 @@ RSpec.describe Postcode do # rubocop:disable Metrics/BlockLength
       end
 
       let(:expected_response) do
-        '{"code":200,"allowed":true}'
+        'Postcode SE1 7QD is allowed'
       end
 
       let(:postcode_inside_area_response) do
@@ -53,7 +53,7 @@ RSpec.describe Postcode do # rubocop:disable Metrics/BlockLength
       end
 
       let(:expected_response) do
-        '{"code":200,"allowed":false}'
+        'Postcode SW20 0JN is not allowed'
       end
 
       let(:postcode_outside_area_response) do
