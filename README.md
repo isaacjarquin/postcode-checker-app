@@ -16,7 +16,7 @@ In order to run the application you need to clone the repo locally and execute t
 
   - bundle install
 
-  - bundle exec postcode_checker.rb
+  - bundle exec ruby postcode_checker.rb
 
 The application runs on WEBrick on port 4567. so in order to access the application
 you need to navigate in your browser to http://localhost:4567
